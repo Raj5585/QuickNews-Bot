@@ -3,7 +3,7 @@ from RPA.Browser.Selenium import Selenium, By
 from qrlib.QRComponent import QRComponent
 from qrlib.QRUtils import display
 from excelfile import Englishkeywords, Nepalikeywords
-import time
+import time, datetime
 
 from selenium.webdriver.common.keys import Keys
 import nepali_datetime
@@ -46,14 +46,14 @@ class Nagarik(QRComponent):
     # def open_broser(self):
         
     #     try:
-    #         self.browser.open_available_browser('https://nagariknews.nagariknetwork.com/search')
+    #         se`alf.browser.open_available_browser('https://nagariknews.nagariknetwork.com/search')
     #         self.browser.maximize_browser_window()
 
     #     except:
     #         print("Error while opening browser")
             
     def scrape(self):
-        print("---------scrapying Nagarik-----------")
+        display("---------scrapying Nagarik-----------")
 
         try:
             self.browser.open_available_browser('https://nagariknews.nagariknetwork.com/search', headless=True)
@@ -84,7 +84,7 @@ class Nagarik(QRComponent):
                         href_value = a_tag.get_attribute('href')
                         content = (div.find_element(By.TAG_NAME,'p')).text
                         if(href_value not in allinks):
-                            self.newsdict = {'title':title,'content':content,'keyword':keyword,'newspaper':"नागरिक दैनिक" ,'link':href_value }
+                            self.newsdict = {'title':title,'date_ad':datetime.datetime.now().strftime("%Y-%m-%d") , 'date_bs':nepalidate,  'content':content,'keyword':keyword,'newspaper':"नागरिक दैनिक" ,'link':href_value }
                             display(self.newsdict)
                         else:
                             print("same link")                 

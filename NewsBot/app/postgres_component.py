@@ -67,8 +67,9 @@ class Database:
                         news_dict["content"],
                         news_dict["link"],
                         news_dict["newspaper"],
-                        current_date,
-                        "",
+                        news_dict["newspaper"],
+                        news_dict['date_bs'],
+                        news_dict['date_ad'],
                     ),
                 )
                 self.conn.commit()

@@ -3,6 +3,7 @@ from qrlib.QRProcess import QRProcess
 from qrlib.QRComponent import QRComponent
 from qrlib.QRUtils import display
 from excelfile import Englishkeywords
+import datetime
 
 data = []
 keywords = Englishkeywords()
@@ -41,7 +42,7 @@ class Ratopati(QRComponent):
                     content,time = self.insideLink(href_value)
 
                     if(getTime[1]=='Minutes' or getTime[1]=='Minute' or getTime[1]=='Seconds' or getTime[1]=='Hour' or getTime[1]=='Hours'):
-                        newsData = {'title':title,'date':time.split('\n')[1],'content':content,'keyword':keyword,'newspaper':"Ratopati",'link':href_value }
+                        newsData = {'title':title,'date_bs':'', 'date_ad':datetime.datetime.now().strftime("%Y-%m-%d"),'content':content,'keyword':keyword,'newspaper':"Ratopati",'link':href_value }
                     else:
                         break
                 data.append(newsData)
