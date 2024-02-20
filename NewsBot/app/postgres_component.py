@@ -1,3 +1,4 @@
+from numpy import disp
 import psycopg2
 from qrlib.QRUtils import display
 import psycopg2
@@ -26,14 +27,16 @@ class Database:
 
         if self.conn:
 
-            display(f"""
+            display(
+                f"""
 -----------------------------------------------[database detail]-------------------------------        
                 Database name : {self.conn.get_dsn_parameters()['dbname']}
                 Username      : {self.conn.get_dsn_parameters()['user']}
                 Host          : {self.conn.get_dsn_parameters()['host']}
                 Port          : {self.conn.get_dsn_parameters()['port']}
 -----------------------------------------------------------------------------------------------
-            """)
+            """
+            )
             display("---------------connection sucessful!-----------------")
             self.cursor = self.conn.cursor()
 
@@ -62,12 +65,9 @@ class Database:
         # display(
         #     "---------------sending data to database-----------------"
         # )  # requires a dictanory and portal name
-        current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        # current_date = datetime.datetime.now().strftime("%Y-%m-%d")
         for news_dict in newslst:
             try:
-                display("\n\n-----------------[news dict]--------------------------------\n")
-                display(news_dict)
-                display("-----------------------------------------------------------------\n\n")
                 insert_query = f"""
                         INSERT INTO {self.table_name}(keyword, title, content, link, newspaper, date_ad, date_bs)
                         VALUES (%s, %s, %s, %s, %s, %s, %s)
@@ -80,15 +80,20 @@ class Database:
                         news_dict["content"],
                         news_dict["link"],
                         news_dict["newspaper"],
-                        news_dict["newspaper"],
-                        news_dict['date_bs'],
-                        news_dict['date_ad'],
+                        news_dict["date_bs"],
+                        news_dict["date_ad"],
                     ),
                 )
+                display(
+                    f"""\tinserted news of paper `{news_dict["newspaper"]}`: 
+            title : {news_dict["title"]}
+            link  : {news_dict["link"]}\n """
+                )
                 self.conn.commit()
-                display("data added")
+                display("\t\t\tdata added")
             except Exception as e:
                 display(e)
+                # raise e
 
     def closeDb(self):
         self.cursor.close()
@@ -98,5 +103,5 @@ class Database:
         display("--------------fetching data from database --------------")
         self.cursor.execute(f"SELECT * FROM {self.table_name}")
         results = self.cursor.fetchall()
-        display(results)
+        # display(results)
         return results
