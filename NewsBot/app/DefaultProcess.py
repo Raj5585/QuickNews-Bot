@@ -59,26 +59,27 @@ class DefaultProcess(QRProcess):
         **kwargs,
     ):
 
-        # Ratopati_data = self.ratopati_component.scrape()
-        # Nagarik_data = self.nagarik_component.scrape()
+        Ratopati_data = self.ratopati_component.scrape()
         ekantipur_data = self.ekantipur_component.scrape()
-        # Himalayan_data = self.Himalayan_component.scrape()
-        # Republica_data = self.Republica_Component.scrape()
-        # Annapurna_data = self.Annapurna_component.scrape()
+        Himalayan_data = self.Himalayan_component.scrape()
+        Nagarik_data = self.nagarik_component.scrape()
+        Republica_data = self.Republica_Component.scrape()
+        Annapurna_data = self.Annapurna_component.scrape()
         # ktmpost_dat = self.ktmpost_component.scrape()
 
-        # display(Ratopati_data)
-        # display(Nagarik_data)
+        display(Ratopati_data)
         display(ekantipur_data)
-        # display(Himalayan_data)
-        # display(Republica_data)
-        # display(Annapurna_data)
+        display(Himalayan_data)
+        display(Nagarik_data)
+        display(Republica_data)
+        display(Annapurna_data)
 
-        # self.postgres_component.sendtodb(newslst=Ratopati_data)
-        # self.postgres_component.sendtodb(newslst=Nagarik_data)
+        self.postgres_component.sendtodb(newslst=Ratopati_data)
         self.postgres_component.sendtodb(newslst=ekantipur_data)
-        # self.postgres_component.sendtodb(newslst=Himalayan_data)
-        # self.postgres_component.sendtodb(newslst=Annapurna_data)
+        self.postgres_component.sendtodb(newslst=Himalayan_data)
+        self.postgres_component.sendtodb(newslst=Nagarik_data)
+        self.postgres_component.sendtodb(newslst=Republica_data)
+        self.postgres_component.sendtodb(newslst=Annapurna_data)
 
     @run_item(is_ticket=False, post_success=False)
     def after_run_item(self, *args, **kwargs):
@@ -87,7 +88,7 @@ class DefaultProcess(QRProcess):
     @run_item(is_ticket=False, post_success=False)
     def after_run(self, *args, **kwargs):
         result = self.postgres_component.fetchData()
-        # self.mailcomponent.send(lst=result)
+        self.mailcomponent.send(lst=result)
         self.postgres_component.closeDb()
 
     def execute_run(self):
