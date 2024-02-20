@@ -1,0 +1,13 @@
+{
+    "test":{
+        "host":"18.224.145.213",
+        "user":"postgres",
+        "port":5433,
+        "password":"rpapassword",
+        "database":"quicknews"
+    },
+    "Quickfox":{
+        "Email_address": "quickrpanews@gmail.com",
+        "Email_password":"zrrn yaed erhe tonc" 
+    }
+}
