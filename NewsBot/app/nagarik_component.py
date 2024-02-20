@@ -85,7 +85,7 @@ class Nagarik(QRComponent):
                         content = (div.find_element(By.TAG_NAME,'p')).text
                         if(href_value not in allinks):
                             self.newsdict = {'title':title,'date_ad':datetime.datetime.now().strftime("%Y-%m-%d") , 'date_bs':nepalidate,  'content':content,'keyword':keyword,'newspaper':"नागरिक दैनिक" ,'link':href_value }
-                            display(self.newsdict)
+                            # display(self.newsdict)
                         else:
                             print("same link")                 
                     else:

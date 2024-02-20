@@ -31,16 +31,16 @@ class RepublicaComponent(QRComponent):
         except:
             print("Error in opening the browser")
         try:
-            display(keywords)
+            # display(keywords)
             for keyword_to_search in keywords:
                 self.browser.go_to(URL)
-                display(f"keyword_to_search: {keyword_to_search}")
+                # display(f"keyword_to_search: {keyword_to_search}")
                 self.links=[]
                 inputbar = '//input[@name="search"]'
                 searchbutton='//input[@type="submit"]'
                 filter_date='//a[@id="filter24hr"]'
                 self.browser.input_text(inputbar, keyword_to_search)
-                display(f"***************Searching for {keyword_to_search} *****************")
+                # display(f"***************Searching for {keyword_to_search} *****************")
                 self.browser.click_element(searchbutton)
                 time.sleep(5)
                 try:
@@ -70,7 +70,7 @@ class RepublicaComponent(QRComponent):
         except Exception as e:
             print(f"Error: {e}")
 
-        display(f"News: {self.news}")
+        # display(f"News: {self.news}")
 
 
            

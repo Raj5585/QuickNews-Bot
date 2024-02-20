@@ -67,12 +67,12 @@ class DefaultProcess(QRProcess):
         Annapurna_data = self.Annapurna_component.scrape()
         # ktmpost_dat = self.ktmpost_component.scrape()
 
-        display(Ratopati_data)
-        display(ekantipur_data)
-        display(Himalayan_data)
-        display(Nagarik_data)
-        display(Republica_data)
-        display(Annapurna_data)
+        # display(Ratopati_data)
+        # display(ekantipur_data)
+        # display(Himalayan_data)
+        # display(Nagarik_data)
+        # display(Republica_data)
+        # display(Annapurna_data)
 
         self.postgres_component.sendtodb(newslst=Ratopati_data)
         self.postgres_component.sendtodb(newslst=ekantipur_data)
@@ -88,7 +88,7 @@ class DefaultProcess(QRProcess):
     @run_item(is_ticket=False, post_success=False)
     def after_run(self, *args, **kwargs):
         result = self.postgres_component.fetchData()
-        self.mailcomponent.send(lst=result)
+        # self.mailcomponent.send(lst=result)
         self.postgres_component.closeDb()
 
     def execute_run(self):

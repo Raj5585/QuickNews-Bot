@@ -1,9 +1,9 @@
 {
     "test":{
-        "host":"18.224.145.213",
+        "host":"localhost",
         "user":"postgres",
         "port":5433,
-        "password":"rpapassword",
+        "password":"mypass",
         "database":"quicknews"
     },
     "Quickfox":{

@@ -38,7 +38,7 @@ class Ratopati(QRComponent):
                     title = a_tag.text
 
                     getTime = (Posttime.text).split(' ')
-                    display(getTime[1])
+                    # display(getTime[1])
                     content,time = self.insideLink(href_value)
 
                     if(getTime[1]=='Minutes' or getTime[1]=='Minute' or getTime[1]=='Seconds' or getTime[1]=='Hour' or getTime[1]=='Hours'):

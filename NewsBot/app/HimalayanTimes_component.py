@@ -36,7 +36,7 @@ class Himalayan(QRComponent):
             print("Error in opening the browser")
 
         try:
-            display(keywords)
+            # display(keywords)
 
             for keyword_to_search in keywords:
                 items=[]
@@ -46,7 +46,7 @@ class Himalayan(QRComponent):
                 inputbar = '//input[@class="gnt_se_frm_q"]'
                 searchbutton='//button[@class="gnt_se_frm_sm"]'
                 self.browser.input_text(inputbar, keyword_to_search)
-                display(f"***************Searching for {keyword_to_search} ****************")
+                # display(f"***************Searching for {keyword_to_search} ****************")
                 self.browser.click_element(searchbutton)
                 time.sleep(5)
                 try:
@@ -76,7 +76,7 @@ class Himalayan(QRComponent):
                             item["date_ad"]=formatted_date
                             item["date_bs"]=""
                             self.news.append(item)
-                            display(f"Added Item:{item['title']}")
+                            # display(f"Added Item:{item['title']}")
 
                     else:
                         display(f"No Links Found for {keyword_to_search}")

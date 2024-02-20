@@ -72,9 +72,9 @@ class Ekantipur(QRComponent):
                     "date_ad": date_ad,
                     "date_bs": date_bs,
                 })
-        display("----------------- displaying result ---------------------------------------")
-        display(results)
-        display("----------------- displaying result ---------------------------------------")
+        # display("----------------- displaying result ---------------------------------------")
+        # display(results)
+        # display("----------------- displaying result ---------------------------------------")
         return results
     
 

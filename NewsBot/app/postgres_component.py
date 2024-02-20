@@ -20,19 +20,30 @@ class Database:
                 password=QREnv.VAULTS["test"]["password"],
                 database=QREnv.VAULTS["test"]["database"],
             )
+
         except Exception as e:
             display(e)
 
         if self.conn:
+
+            display(f"""
+-----------------------------------------------[database detail]-------------------------------        
+                Database name : {self.conn.get_dsn_parameters()['dbname']}
+                Username      : {self.conn.get_dsn_parameters()['user']}
+                Host          : {self.conn.get_dsn_parameters()['host']}
+                Port          : {self.conn.get_dsn_parameters()['port']}
+-----------------------------------------------------------------------------------------------
+            """)
             display("---------------connection sucessful!-----------------")
             self.cursor = self.conn.cursor()
 
     def sendtodb(self, newslst):
+        self.table_name = "test_news_table"
 
         try:
-            display("---------------------------------- create -----------------")
+            # display("---------------------------------- create -----------------")
             self.cursor.execute(
-                """CREATE TABLE IF NOT EXISTS test_news_table(
+                f"""CREATE TABLE IF NOT EXISTS {self.table_name}(
                 id SERIAL PRIMARY KEY, 
                 newspaper VARCHAR(30), 
                 keyword VARCHAR(30),
@@ -48,15 +59,17 @@ class Database:
         except Exception as create_table_error:
             print("Error creating table:", create_table_error)
 
-        display(
-            "---------------sending data to database-----------------"
-        )  # requires a dictanory and portal name
+        # display(
+        #     "---------------sending data to database-----------------"
+        # )  # requires a dictanory and portal name
         current_date = datetime.datetime.now().strftime("%Y-%m-%d")
         for news_dict in newslst:
             try:
+                display("\n\n-----------------[news dict]--------------------------------\n")
                 display(news_dict)
-                insert_query = """
-                        INSERT INTO test_news_table(keyword, title, content, link, newspaper, date_ad, date_bs)
+                display("-----------------------------------------------------------------\n\n")
+                insert_query = f"""
+                        INSERT INTO {self.table_name}(keyword, title, content, link, newspaper, date_ad, date_bs)
                         VALUES (%s, %s, %s, %s, %s, %s, %s)
                         """
                 self.cursor.execute(
@@ -83,7 +96,7 @@ class Database:
 
     def fetchData(self):
         display("--------------fetching data from database --------------")
-        self.cursor.execute("SELECT * FROM newsbase")
+        self.cursor.execute(f"SELECT * FROM {self.table_name}")
         results = self.cursor.fetchall()
         display(results)
         return results
