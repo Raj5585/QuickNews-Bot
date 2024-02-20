@@ -16,6 +16,7 @@ class Ekantipur(QRComponent):
         super().__init__()
         self.browser = Selenium()
         self.keywords = Nepalikeywords()
+        self.alllinks = []
 
     
     def open_browser(self):
@@ -43,7 +44,6 @@ class Ekantipur(QRComponent):
             except Exception as e:
                 print(e)
 
-
             articles_list = self.browser.find_elements("xpath=//article[@class]")
             for _ in articles_list:
 
@@ -61,15 +61,17 @@ class Ekantipur(QRComponent):
                 date_ad = date.to_datetime_date().strftime("%Y-%m-%d")
                 
 
-            results.append({
-                "newspaper": "eKantipur",
-                "keyword" : keyword,
-                "title": title,
-                "content": content,
-                "link": link,
-                "date_ad": date_ad,
-                "date_bs": date_bs,
-            })
+            if(link not in self.alllinks):
+                self.alllinks.append(link)
+                results.append({
+                    "newspaper": "eKantipur",
+                    "keyword" : keyword,
+                    "title": title,
+                    "content": content,
+                    "link": link,
+                    "date_ad": date_ad,
+                    "date_bs": date_bs,
+                })
         display("----------------- displaying result ---------------------------------------")
         display(results)
         display("----------------- displaying result ---------------------------------------")
