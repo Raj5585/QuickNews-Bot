@@ -1,7 +1,6 @@
 import psycopg2
 from qrlib.QRUtils import display
 import psycopg2
-import datetime
 from qrlib.QREnv import QREnv
 
 
@@ -32,7 +31,7 @@ class Database:
         try:
             display("---------------------------------- create -----------------")
             self.cursor.execute(
-                """CREATE TABLE IF NOT EXISTS test_news_table(
+                """CREATE TABLE IF NOT EXISTS newsbase(
                 id SERIAL PRIMARY KEY, 
                 newspaper VARCHAR(30), 
                 keyword VARCHAR(30),
@@ -48,42 +47,37 @@ class Database:
         except Exception as create_table_error:
             print("Error creating table:", create_table_error)
 
-        display(
-            "---------------sending data to database-----------------"
-        )  # requires a dictanory and portal name
-        current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        display("---------------sending data to database-----------------" ) 
         for news_dict in newslst:
             try:
                 display(news_dict)
                 insert_query = """
-                        INSERT INTO test_news_table(keyword, title, content, link, newspaper, date_ad, date_bs)
+                        INSERT INTO newsbase(keyword, title, content, link, newspaper, date_ad, date_bs)
                         VALUES (%s, %s, %s, %s, %s, %s, %s)
                         """
-                self.cursor.execute(
-                    insert_query,
-                    (
-                        news_dict["keyword"],
+                self.cursor.execute(insert_query,
+                    (news_dict["keyword"],
                         news_dict["title"],
                         news_dict["content"],
                         news_dict["link"],
                         news_dict["newspaper"],
-                        news_dict["newspaper"],
-                        news_dict['date_bs'],
                         news_dict['date_ad'],
-                    ),
-                )
+                        news_dict['date_bs']))
                 self.conn.commit()
                 display("data added")
+                
             except Exception as e:
+                display("data not added due to: ")
                 display(e)
 
+    def fetchData(self):
+        display("--------------fetching data from database --------------")
+        self.cursor.execute("SELECT DISTINCT * FROM newsbase")
+        results = self.cursor.fetchall()
+        display(results)
+        return results
+    
     def closeDb(self):
         self.cursor.close()
         display("connection close")
 
-    def fetchData(self):
-        display("--------------fetching data from database --------------")
-        self.cursor.execute("SELECT * FROM newsbase")
-        results = self.cursor.fetchall()
-        display(results)
-        return results

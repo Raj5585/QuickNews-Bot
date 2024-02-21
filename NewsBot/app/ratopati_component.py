@@ -12,7 +12,6 @@ class Ratopati(QRComponent):
         super().__init__()
         self.browser = Selenium()
     def open_broser(self, url):
-        display("-----------scraping Ratopati--------------")
         try:
             self.browser.open_available_browser(url, headless=True)
             self.browser.maximize_browser_window()
@@ -20,11 +19,9 @@ class Ratopati(QRComponent):
             print("Error while opening browser")
 
     def scrape(self):
-        
-       
-       
+        display("-----------scraping Ratopati--------------")
         for keyword in keywords:
-            print(keyword)
+            display(f"***************Searching for {keyword} in Ratopati*****************")
             URL = f"https://english.ratopati.com/search?query={keyword}"
             self.open_broser(URL)
 
@@ -47,9 +44,10 @@ class Ratopati(QRComponent):
                         break
                 data.append(newsData)
             except BaseException as e:
+                display("main div not found")
                 print(e)
             #display(newsData)
-            return data
+        return data
 
     def insideLink(self,link):
         self.browser.open_available_browser(link,headless=True)

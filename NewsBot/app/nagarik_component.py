@@ -43,14 +43,6 @@ class Nagarik(QRComponent):
         formatteddate = '-'.join(lstnew)
         return formatteddate
 
-    # def open_broser(self):
-        
-    #     try:
-    #         se`alf.browser.open_available_browser('https://nagariknews.nagariknetwork.com/search')
-    #         self.browser.maximize_browser_window()
-
-    #     except:
-    #         print("Error while opening browser")
             
     def scrape(self):
         display("---------scrapying Nagarik-----------")
@@ -64,7 +56,7 @@ class Nagarik(QRComponent):
 
         allinks = []
         for keyword in keywords:
-            print(keyword)
+            display(f"***************Searching for {keyword} in nagarik*****************")
             input_field = self.browser.find_element('//input[@id="txtSearch"]')
             input_field.clear()
             input_field.send_keys(keyword + ' ')
@@ -84,7 +76,14 @@ class Nagarik(QRComponent):
                         href_value = a_tag.get_attribute('href')
                         content = (div.find_element(By.TAG_NAME,'p')).text
                         if(href_value not in allinks):
-                            self.newsdict = {'title':title,'date_ad':datetime.datetime.now().strftime("%Y-%m-%d") , 'date_bs':nepalidate,  'content':content,'keyword':keyword,'newspaper':"नागरिक दैनिक" ,'link':href_value }
+                            self.newsdict = {'title':title,
+                                             'date_ad':datetime.datetime.now().strftime("%Y-%m-%d") , 
+                                             'date_bs':nepalidate,  
+                                             'content':content,
+                                             'keyword':keyword,
+                                             'newspaper':"नागरिक दैनिक" ,
+                                             'link':href_value 
+                                             }
                             display(self.newsdict)
                         else:
                             print("same link")                 

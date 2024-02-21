@@ -10,6 +10,7 @@ from QRUtils import display
 from qrlib.QREnv import QREnv
 
 class sendMail():
+    
 
     def __init__(self) -> None:
         self.csv_file = './excelfiles/emails.csv'
@@ -64,7 +65,7 @@ class sendMail():
     
         if(len(results)==0):
             print("No articles to send")
-            email_body = "<h2>No Articles Today:</h2>"
+            email_body = "<h2>No Articles Today</h2>"
             message.attach(MIMEText(email_body, "html"))
         else:
             # Create the email body using HTML format
@@ -75,18 +76,18 @@ class sendMail():
                 display(result)
                 if(result['date_bs']!=nepali_date) and (result['date_ad'] != eng_date):
                     continue
-                print(result)
+                display(f'sending:-{result}')
                 email_body += f"""
                     <div style="background-color:#ededed; margin-top:14px; ">
 
                     <div style="margin-left:7px;">
                     <a style="text-decoration: none;" href='{result['link']}'><span style=" font-size:18px;color:black; font-weight: bold;">{result['title']}</span></a>
-                    <span style="font-weight:bold; font-size:13px;font-style:italic; color:#280a4f;"> (#{result['keyword']})</span><br>
+                    <span style="font-weight:bold; font-size:13px;font-style:italic; color:#280a4f;"> #{result['keyword']}</span><br>
                     <span style="color:black;text-decoration: underline;font-weight:bold; font-size:14px;color:#4a4a4a">{result['newspaper']}</span>
 
                     <span style="font-style:italic;font-weight:bold;font-size:14px; color:#4a4a4a">({result['date_ad']})</span>
                     <div style="padding-bottom:8px;">
-                    <p style=" color:black; font-size:14px">{result['content']}
+                    <p style=" color:black; font-size:14px">{result['content']}
                     <a style="text-decoration: none;" href='{result['link']}'>Read More...</a><br><br>
                     
                     </p>        

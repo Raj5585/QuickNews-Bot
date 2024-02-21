@@ -33,6 +33,7 @@ class AnnapurnaComponent(QRComponent):
         total_count = 0
         # Perform a search for each keyword
         for keyword in keywords:
+            display(f"***************Searching for {keyword} *****************")
             links = []
             search_url=f"{self.url.strip()}?q={keyword}"
             self.browser.go_to(search_url)

@@ -19,12 +19,10 @@ class RepublicaComponent(QRComponent):
         self.browser=Selenium()
         self.links=[]
         self.news=[]
-    def open_browser(self):
-        pass
 
     def scrape(self):
         
-        display("-----------scraping Republica--------------")
+        display("******************scraping Republica******************")
         try:
             self.browser.open_available_browser(URL, headless=True)
             self.browser.maximize_browser_window()
@@ -40,7 +38,7 @@ class RepublicaComponent(QRComponent):
                 searchbutton='//input[@type="submit"]'
                 filter_date='//a[@id="filter24hr"]'
                 self.browser.input_text(inputbar, keyword_to_search)
-                display(f"***************Searching for {keyword_to_search} *****************")
+                
                 self.browser.click_element(searchbutton)
                 time.sleep(5)
                 try:
@@ -60,7 +58,7 @@ class RepublicaComponent(QRComponent):
                         date_object = datetime.strptime(published_date[:-16], "%B %d, %Y")
                         formatted_date = date_object.strftime('%Y-%m-%d')
                         
-                        self.news.append({'keyword':keyword_to_search,'title': title, 'content':desc,'link': link,'date_ad':formatted_date,'newspaper':'My Republica'})
+                        self.news.append({'keyword':keyword_to_search,'title': title, 'content':desc,'link': link,'date_bs':'','date_ad':formatted_date,'newspaper':'My Republica'})
                     
                 except:
                     display("No Articles")
