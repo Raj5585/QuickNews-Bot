@@ -49,7 +49,6 @@ class AnnapurnaComponent(QRComponent):
             self.get_data(links, keyword)
         return self.results
 
-        # print(self.links)
 
     def get_data(self, links, keyword):
 

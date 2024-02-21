@@ -1,7 +1,6 @@
 from functools import total_ordering
 from qrlib.QRProcess import QRProcess
 from qrlib.QRDecorators import run_item
-from qrlib.QRRunItem import QRRunItem
 from ratopati_component import Ratopati
 from postgres_component import Database
 from nagarik_component import Nagarik
@@ -88,17 +87,8 @@ class DefaultProcess(QRProcess):
         self.postgres_component.sendtodb(newslst=Annapurna_data)
 
         result = self.postgres_component.fetchData()
-        self.mailcomponent.send(lst=result)
+        
 
-    @run_item(is_ticket=False, post_success=False)
-    def after_run_item(self, *args, **kwargs):
-        pass
-
-    @run_item(is_ticket=False, post_success=False)
-    def after_run(self, *args, **kwargs):
-<<<<<<< HEAD
-=======
-        result = self.postgres_component.fetchData()
         display(
             "------------------------------------------------------------[ RESULT ]---------------------------------------------------------"
         )
@@ -113,9 +103,16 @@ class DefaultProcess(QRProcess):
 -------------------------------------------------------------------------------------------------------------------------------
             """
         )
-        # self.mailcomponent.send(lst=result)
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
+        self.mailcomponent.send(lst=result)
+
+    @run_item(is_ticket=False, post_success=False)
+    def after_run_item(self, *args, **kwargs):
+        pass
+
+    @run_item(is_ticket=False, post_success=False)
+    def after_run(self, *args, **kwargs):
         self.postgres_component.closeDb()
+        # self.mailcomponent.send(lst=result)
 
     def execute_run(self):
         pass

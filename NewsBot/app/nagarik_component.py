@@ -48,19 +48,8 @@ class Nagarik(QRComponent):
         formatteddate = "-".join(lstnew)
         return formatteddate
 
-<<<<<<< HEAD
             
-=======
-    # def open_broser(self):
 
-    #     try:
-    #         se`alf.browser.open_available_browser('https://nagariknews.nagariknetwork.com/search')
-    #         self.browser.maximize_browser_window()
-
-    #     except:
-    #         print("Error while opening browser")
-
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
     def scrape(self):
         display("----------------------[scraping Nagarik]--------------")
 
@@ -75,11 +64,7 @@ class Nagarik(QRComponent):
 
         allinks = []
         for keyword in keywords:
-<<<<<<< HEAD
             display(f"***************Searching for {keyword} in nagarik*****************")
-=======
-            display(f"searching for {keyword}")
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
             input_field = self.browser.find_element('//input[@id="txtSearch"]')
             input_field.clear()
             input_field.send_keys(keyword + " ")
@@ -98,20 +83,7 @@ class Nagarik(QRComponent):
                         a_tag = h1tag.find_element(By.TAG_NAME, "a")
                         href_value = a_tag.get_attribute("href")
                         title = a_tag.text
-<<<<<<< HEAD
-                        href_value = a_tag.get_attribute('href')
-                        content = (div.find_element(By.TAG_NAME,'p')).text
-                        if(href_value not in allinks):
-                            self.newsdict = {'title':title,
-                                             'date_ad':datetime.datetime.now().strftime("%Y-%m-%d") , 
-                                             'date_bs':nepalidate,  
-                                             'content':content,
-                                             'keyword':keyword,
-                                             'newspaper':"नागरिक दैनिक" ,
-                                             'link':href_value 
-                                             }
-                            display(self.newsdict)
-=======
+                        
                         href_value = a_tag.get_attribute("href")
                         content = (div.find_element(By.TAG_NAME, "p")).text
                         if href_value not in allinks:
@@ -125,7 +97,6 @@ class Nagarik(QRComponent):
                                 "link": href_value,
                             }
                             # display(self.newsdict)
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
                         else:
                             print("same link")
                     else:

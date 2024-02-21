@@ -17,7 +17,6 @@ class RepublicaComponent(QRComponent):
 
     def __init__(self):
         super().__init__()
-<<<<<<< HEAD
         self.browser=Selenium()
         self.links=[]
         self.news=[]
@@ -25,7 +24,6 @@ class RepublicaComponent(QRComponent):
     def scrape(self):
         
         display("******************scraping Republica******************")
-=======
         self.browser = Selenium()
         self.links = []
         self.news = []
@@ -36,7 +34,6 @@ class RepublicaComponent(QRComponent):
     def scrape(self):
 
         display("----------------------[scraping Republica]--------------")
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
         try:
             self.browser.open_available_browser(URL, headless=True)
             self.browser.maximize_browser_window()
@@ -52,11 +49,7 @@ class RepublicaComponent(QRComponent):
                 searchbutton = '//input[@type="submit"]'
                 filter_date = '//a[@id="filter24hr"]'
                 self.browser.input_text(inputbar, keyword_to_search)
-<<<<<<< HEAD
-                
-=======
                 # display(f"***************Searching for {keyword_to_search} *****************")
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
                 self.browser.click_element(searchbutton)
                 time.sleep(5)
                 try:
@@ -86,7 +79,6 @@ class RepublicaComponent(QRComponent):
                             )
                         )
                         get_date = date.split(": ")
-<<<<<<< HEAD
                         published_date=get_date[1]
                         date_object = datetime.strptime(published_date[:-16], "%B %d, %Y")
                         formatted_date = date_object.strftime('%Y-%m-%d')
@@ -95,28 +87,6 @@ class RepublicaComponent(QRComponent):
                     
                 except:
                     display("No Articles")
-            return self.news
-=======
-                        published_date = get_date[1]
-                        date_object = datetime.strptime(
-                            published_date[:-16], "%B %d, %Y"
-                        )
-                        formatted_date = date_object.strftime("%Y-%m-%d")
->>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
-
-                        self.news.append(
-                            {
-                                "keyword": keyword_to_search,
-                                "title": title,
-                                "content": desc,
-                                "link": link,
-                                "date_ad": formatted_date,
-                                "newspaper": "My Republica",
-                            }
-                        )
-
-                except:
-                    display("\t\tNo Articles")
             return self.news
 
         except Exception as e:
