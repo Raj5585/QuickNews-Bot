@@ -66,10 +66,10 @@ class Database:
         # current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
         self.cursor.execute(f"SELECT DISTINCT link FROM {self.table_name}")
-        all_links = list(self.cursor.fetchall())    
+        all_links = list(self.cursor.fetchall())
 
         for news_dict in newslst:
-            if (news_dict['link'] not in all_links):  
+            if news_dict["link"] not in all_links:
                 try:
                     insert_query = f"""
                             INSERT INTO {self.table_name}(keyword, title, content, link, newspaper, date_ad, date_bs)
@@ -91,16 +91,20 @@ class Database:
 
                     display(
                         f"""\tinserted news of paper `{news_dict["newspaper"]}`: 
-                title : {news_dict["title"]}
-                link  : {news_dict["link"]}\n """
+                title    : {news_dict["title"]}
+                link     : {news_dict["link"]}
+                date     : {news_dict["date_ad"]}
+                keyword  : {news_dict["title"]}\n """
                     )
                     self.conn.commit()
                     display("\t\t\tdata added")
                 except Exception as e:
                     display("data not added due to: ")
                     display(e)
-            else: 
-                display("xxxxxxxxxxxxxxxxxxxxxxxxxxx[duplicate link]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+            else:
+                display(
+                    "xxxxxxxxxxxxxxxxxxxxxxxxxxx[duplicate link]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                )
 
     def closeDb(self):
         self.cursor.close()
