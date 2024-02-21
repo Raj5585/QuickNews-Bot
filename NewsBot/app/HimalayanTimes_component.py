@@ -22,6 +22,7 @@ class Himalayan(QRComponent):
 
         self.links = []
         self.news = []
+        self.alllinks =[]
 
     def open_browser(self):
         pass

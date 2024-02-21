@@ -59,37 +59,48 @@ class Database:
         except Exception as create_table_error:
             print("Error creating table:", create_table_error)
 
-        display("---------------sending data to database-----------------" ) 
+        display("---------------sending data to database-----------------")
         # display(
         #     "---------------sending data to database-----------------"
         # )  # requires a dictanory and portal name
         # current_date = datetime.datetime.now().strftime("%Y-%m-%d")
-        for news_dict in newslst:
-            try:
-                insert_query = f"""
-                        INSERT INTO {self.table_name}(keyword, title, content, link, newspaper, date_ad, date_bs)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s)
-                        """
-                self.cursor.execute(insert_query,
-                    (news_dict["keyword"],
-                        news_dict["title"],
-                        news_dict["content"],
-                        news_dict["link"],
-                        news_dict["newspaper"],
-                        news_dict['date_ad'],
-                        news_dict['date_bs']))
-                self.conn.commit()
 
-                display(
-                    f"""\tinserted news of paper `{news_dict["newspaper"]}`: 
-            title : {news_dict["title"]}
-            link  : {news_dict["link"]}\n """
-                )
-                self.conn.commit()
-                display("\t\t\tdata added")
-            except Exception as e:
-                display("data not added due to: ")
-                display(e)
+        self.cursor.execute(f"SELECT DISTINCT link FROM {self.table_name}")
+        all_links = list(self.cursor.fetchall())    
+
+        for news_dict in newslst:
+            if (news_dict['link'] not in all_links):  
+                try:
+                    insert_query = f"""
+                            INSERT INTO {self.table_name}(keyword, title, content, link, newspaper, date_ad, date_bs)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s)
+                            """
+                    self.cursor.execute(
+                        insert_query,
+                        (
+                            news_dict["keyword"],
+                            news_dict["title"],
+                            news_dict["content"],
+                            news_dict["link"],
+                            news_dict["newspaper"],
+                            news_dict["date_ad"],
+                            news_dict["date_bs"],
+                        ),
+                    )
+                    self.conn.commit()
+
+                    display(
+                        f"""\tinserted news of paper `{news_dict["newspaper"]}`: 
+                title : {news_dict["title"]}
+                link  : {news_dict["link"]}\n """
+                    )
+                    self.conn.commit()
+                    display("\t\t\tdata added")
+                except Exception as e:
+                    display("data not added due to: ")
+                    display(e)
+            else: 
+                display("xxxxxxxxxxxxxxxxxxxxxxxxxxx[duplicate link]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
     def closeDb(self):
         self.cursor.close()

@@ -6,6 +6,7 @@ from excelfile import Englishkeywords
 import datetime
 
 data = []
+alllinks = []
 keywords = Englishkeywords()
 
 
@@ -15,7 +16,6 @@ class Ratopati(QRComponent):
         self.browser = Selenium()
 
     def open_broser(self, url):
-        display("----------------------[scraping Ratopati]--------------")
         try:
             self.browser.open_available_browser(url, headless=True)
             self.browser.maximize_browser_window()
@@ -23,7 +23,7 @@ class Ratopati(QRComponent):
             print("Error while opening browser")
 
     def scrape(self):
-        display("-----------scraping Ratopati--------------")
+        display("----------------------[scraping Ratopati]--------------")
         for keyword in keywords:
             display(
                 f"***************Searching for {keyword} in Ratopati*****************"
@@ -55,15 +55,19 @@ class Ratopati(QRComponent):
                         or getTime[1] == "Hour"
                         or getTime[1] == "Hours"
                     ):
-                        newsData = {
-                            "title": title,
-                            "date_bs": "",
-                            "date_ad": datetime.datetime.now().strftime("%Y-%m-%d"),
-                            "content": content,
-                            "keyword": keyword,
-                            "newspaper": "Ratopati",
-                            "link": href_value,
-                        }
+                        if href_value not in alllinks:
+                            alllinks.append(href_value)
+                            newsData = {
+                                "title": title,
+                                "date_bs": "",
+                                "date_ad": datetime.datetime.now().strftime("%Y-%m-%d"),
+                                "content": content,
+                                "keyword": keyword,
+                                "newspaper": "Ratopati",
+                                "link": href_value,
+                            }
+                        else:
+                            display('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[duplicate link]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]')
                     else:
                         break
                 data.append(newsData)
