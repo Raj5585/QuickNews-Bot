@@ -35,28 +35,20 @@ class Ratopati(QRComponent):
             self.open_broser(URL)
 
             try:
-                maindivs = self.browser.find_elements(
-                    '//div[@class="post-card__more-secondary-story"]'
-                )
+                maindivs = self.browser.find_elements('//div[@class="post-card__more-secondary-story"]')
 
                 for div in maindivs:
                     a_tag = div.find_element(By.TAG_NAME, "a")
                     Posttime = div.find_element(By.TAG_NAME, "time")
-                    href_value = a_tag.get_attribute("href")
+                    link = a_tag.get_attribute("href")
                     title = a_tag.text
 
                     getTime = (Posttime.text).split(" ")
-                    content, time = self.insideLink(href_value)
+                    content, time = self.insideLink(link)
 
-                    if (
-                        getTime[1] == "Minutes"
-                        or getTime[1] == "Minute"
-                        or getTime[1] == "Seconds"
-                        or getTime[1] == "Hour"
-                        or getTime[1] == "Hours"
-                    ):
-                        if href_value not in alllinks:
-                            alllinks.append(href_value)
+                    if (getTime[1] == "Minutes" or getTime[1] == "Minute" or getTime[1] == "Seconds"  or getTime[1] == "Hour"or getTime[1] == "Hours"):
+                        if (link not in alllinks):
+                            alllinks.append(link)
                             newsData = {
                                 "title": title,
                                 "date_bs": "",
@@ -64,13 +56,14 @@ class Ratopati(QRComponent):
                                 "content": content,
                                 "keyword": keyword,
                                 "newspaper": "Ratopati",
-                                "link": href_value,
+                                "link": link,
                             }
                         else:
                             display('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx[duplicate link]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]')
                     else:
+                        display("no recent news ")
                         break
-                data.append(newsData)
+                    data.append(newsData)
             except BaseException as e:
                 display("main div not found")
                 print(e)
