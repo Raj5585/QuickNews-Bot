@@ -1,3 +1,4 @@
+from numpy import disp
 import psycopg2
 from qrlib.QRUtils import display
 import psycopg2
@@ -19,19 +20,36 @@ class Database:
                 password=QREnv.VAULTS["test"]["password"],
                 database=QREnv.VAULTS["test"]["database"],
             )
+
         except Exception as e:
             display(e)
 
         if self.conn:
+
+            display(
+                f"""
+-----------------------------------------------[database detail]-------------------------------        
+                Database name : {self.conn.get_dsn_parameters()['dbname']}
+                Username      : {self.conn.get_dsn_parameters()['user']}
+                Host          : {self.conn.get_dsn_parameters()['host']}
+                Port          : {self.conn.get_dsn_parameters()['port']}
+-----------------------------------------------------------------------------------------------
+            """
+            )
             display("---------------connection sucessful!-----------------")
             self.cursor = self.conn.cursor()
 
     def sendtodb(self, newslst):
+        self.table_name = "test_news_table"
 
         try:
-            display("---------------------------------- create -----------------")
+            # display("---------------------------------- create -----------------")
             self.cursor.execute(
+<<<<<<< HEAD
                 """CREATE TABLE IF NOT EXISTS newsbase(
+=======
+                f"""CREATE TABLE IF NOT EXISTS {self.table_name}(
+>>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
                 id SERIAL PRIMARY KEY, 
                 newspaper VARCHAR(30), 
                 keyword VARCHAR(30),
@@ -47,12 +65,23 @@ class Database:
         except Exception as create_table_error:
             print("Error creating table:", create_table_error)
 
+<<<<<<< HEAD
         display("---------------sending data to database-----------------" ) 
         for news_dict in newslst:
             try:
                 display(news_dict)
                 insert_query = """
                         INSERT INTO newsbase(keyword, title, content, link, newspaper, date_ad, date_bs)
+=======
+        # display(
+        #     "---------------sending data to database-----------------"
+        # )  # requires a dictanory and portal name
+        # current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+        for news_dict in newslst:
+            try:
+                insert_query = f"""
+                        INSERT INTO {self.table_name}(keyword, title, content, link, newspaper, date_ad, date_bs)
+>>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
                         VALUES (%s, %s, %s, %s, %s, %s, %s)
                         """
                 self.cursor.execute(insert_query,
@@ -61,14 +90,29 @@ class Database:
                         news_dict["content"],
                         news_dict["link"],
                         news_dict["newspaper"],
+<<<<<<< HEAD
                         news_dict['date_ad'],
                         news_dict['date_bs']))
                 self.conn.commit()
                 display("data added")
                 
+=======
+                        news_dict["date_bs"],
+                        news_dict["date_ad"],
+                    ),
+                )
+                display(
+                    f"""\tinserted news of paper `{news_dict["newspaper"]}`: 
+            title : {news_dict["title"]}
+            link  : {news_dict["link"]}\n """
+                )
+                self.conn.commit()
+                display("\t\t\tdata added")
+>>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
             except Exception as e:
                 display("data not added due to: ")
                 display(e)
+                # raise e
 
     def fetchData(self):
         display("--------------fetching data from database --------------")
@@ -81,3 +125,12 @@ class Database:
         self.cursor.close()
         display("connection close")
 
+<<<<<<< HEAD
+=======
+    def fetchData(self):
+        display("--------------fetching data from database --------------")
+        self.cursor.execute(f"SELECT * FROM {self.table_name}")
+        results = self.cursor.fetchall()
+        # display(results)
+        return results
+>>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac

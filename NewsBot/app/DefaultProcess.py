@@ -1,3 +1,4 @@
+from functools import total_ordering
 from qrlib.QRProcess import QRProcess
 from qrlib.QRDecorators import run_item
 from qrlib.QRRunItem import QRRunItem
@@ -11,6 +12,8 @@ from annapurna_component import AnnapurnaComponent
 from KtmPost_Component import KtmPost
 from mailcomponent import sendMail
 from qrlib.QRUtils import display
+
+import json
 
 # from storagebucket import Storage
 
@@ -93,6 +96,25 @@ class DefaultProcess(QRProcess):
 
     @run_item(is_ticket=False, post_success=False)
     def after_run(self, *args, **kwargs):
+<<<<<<< HEAD
+=======
+        result = self.postgres_component.fetchData()
+        display(
+            "------------------------------------------------------------[ RESULT ]---------------------------------------------------------"
+        )
+        total_news = 0
+        for each in result:
+            display(json.dumps(each, indent=4, ensure_ascii=False))
+            total_news = total_news + 1
+        display(
+            f"""
+-------------------------------------------------------------------------------------------------------------------------------
+                            TOTAL NEWS : {total_news}
+-------------------------------------------------------------------------------------------------------------------------------
+            """
+        )
+        # self.mailcomponent.send(lst=result)
+>>>>>>> 29ab36095dee08b5e1590f825712afd3edfe04ac
         self.postgres_component.closeDb()
 
     def execute_run(self):
