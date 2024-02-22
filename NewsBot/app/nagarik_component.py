@@ -55,7 +55,7 @@ class Nagarik(QRComponent):
 
         try:
             self.browser.open_available_browser(
-                "https://nagariknews.nagariknetwork.com/search", headless=True
+                "https://nagariknews.nagariknetwork.com/search"
             )
             self.browser.maximize_browser_window()
 
@@ -66,10 +66,11 @@ class Nagarik(QRComponent):
         for keyword in keywords:
             display(f"***************Searching for {keyword} in nagarik*****************")
             input_field = self.browser.find_element('//input[@id="txtSearch"]')
+            time.sleep(2)
             input_field.clear()
-            input_field.send_keys(keyword + " ")
+            input_field.send_keys(str(keyword) + " ")
             input_field.send_keys(Keys.RETURN)
-            time.sleep(1)
+            time.sleep(2)
             articles = self.browser.find_elements(
                 '//article[contains(@class,"list-group-item")]/div[@class="text"]'
             )
@@ -77,8 +78,9 @@ class Nagarik(QRComponent):
                 try:
                     pt = div.find_element(By.TAG_NAME, "time")
                     nepalidate = self.convertoenglish(pt.text)
-
-                    if nepalidate == str(nepali_datetime.date.today()):
+                    display(nepalidate)
+                    display(str(nepali_datetime.date.today()))
+                    if (nepalidate == str(nepali_datetime.date.today())):
                         h1tag = div.find_element(By.TAG_NAME, "h1")
                         a_tag = h1tag.find_element(By.TAG_NAME, "a")
                         href_value = a_tag.get_attribute("href")
@@ -86,26 +88,30 @@ class Nagarik(QRComponent):
                         
                         href_value = a_tag.get_attribute("href")
                         content = (div.find_element(By.TAG_NAME, "p")).text
-                        if href_value not in allinks:
-                            self.newsdict = {
-                                "title": title,
-                                "date_ad": datetime.datetime.now().strftime("%Y-%m-%d"),
-                                "date_bs": nepalidate,
-                                "content": content,
-                                "keyword": keyword,
-                                "newspaper": "नागरिक दैनिक",
-                                "link": href_value,
-                            }
-                            # display(self.newsdict)
+                        display(content)
+                        if((keyword not in content) or( keyword not in title)):
+                            if( href_value not in allinks):
+                                self.newsdict = {
+                                    "title": title,
+                                    "date_ad": datetime.datetime.now().strftime("%Y-%m-%d"),
+                                    "date_bs": nepalidate,
+                                    "content": content,
+                                    "keyword": keyword,
+                                    "newspaper": "नागरिक दैनिक",
+                                    "link": href_value,
+                                }
+                                # display(self.newsdict)
+                            else:
+                                display("same link")
                         else:
-                            print("same link")
+                            display("Wrong News")
                     else:
-                        print("no further data")
+                        display("no further data")
                         break
                 except BaseException as e:
-                    print(e)
-                    print("no time found")
+                    display(e)
+                    display("no time found")
 
         data.append(self.newsdict)
-        print(data)
+        display(data)
         return data

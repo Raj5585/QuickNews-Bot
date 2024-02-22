@@ -9,6 +9,8 @@ class Database:
         super().__init__()
         self.conn = None
         self.cursor = None
+        self.table_name = "newsbase"
+
 
     def connection(self):
         try:
@@ -39,8 +41,7 @@ class Database:
             self.cursor = self.conn.cursor()
 
     def sendtodb(self, newslst):
-        self.table_name = "newsbase"
-
+       
         try:
             self.cursor.execute(
                 f"""CREATE TABLE IF NOT EXISTS {self.table_name}(
@@ -108,6 +109,6 @@ class Database:
 
     def fetchData(self):
         display("--------------fetching data from database --------------")
-        self.cursor.execute(f"SELECT DISTINCT * FROM {self.table_name}")
+        self.cursor.execute(f"SELECT keyword, title, content, link, newspaper, date_ad, date_bs FROM {self.table_name}")
         results = self.cursor.fetchall()
         return results

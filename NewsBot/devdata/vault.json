@@ -1,5 +1,5 @@
 {
-    "test":{
+    "database":{
         "host":"18.224.145.213",
         "user":"postgres",
         "port":5433,

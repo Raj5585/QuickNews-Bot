@@ -21,7 +21,8 @@ class sendMail():
 
     def send(self, lst):
         display("---------------sending Mail-----------------")
-        keys = ['id', 'keyword', 'title', 'content', 'link', 'newspaper','date_ad','date_bs']
+
+        keys = ['keyword', 'title', 'content', 'link', 'newspaper','date_ad','date_bs']
         results = []
         for  i in lst:
             my_dict = {key: value for key, value in zip(keys, i)}
@@ -69,37 +70,66 @@ class sendMail():
             message.attach(MIMEText(email_body, "html"))
         else:
             # Create the email body using HTML format
-            email_body = "<h2 style='margin-left:7px; color:black;'>Today's News:</h2>"
+            email_body = "<h2 style='margin-left:7px; color:black;'>Stay Informed, Stay Ahead: Your Daily Dose of Today's Breaking News!</h2>"
 
             # Append each article to the email body
             for result  in results:
+                if(result['newspaper']=='Ratopati' ):
+                    icon = 'https://npcdn.ratopati.com/media/setting/fav_WteZzVu6I7.png'
+                if(result['newspaper']=='My Republica'):
+                    icon = 'https://myrepublica.nagariknetwork.com/bundles/nagarikfrontend/images/ico/fav.png'
+                if(result['newspaper']=="नागरिक दैनिक" ):
+                    icon = 'https://staticcdn.nagariknetwork.com/images/favicon.png'
+                if(result['newspaper']=="The Himalayan Times" ):
+                    icon = 'https://thehimalayantimes.com/theme_himalayantimes/images/favicon.png'
+                if(result['newspaper']== "eKantipur" ):
+                    icon = 'https://jcss-cdn.ekantipur.com/kantipurdaily/images/favicon.png'
+                if(result['newspaper']=="Annapurna Post" ):
+                    icon = 'https://snowberry.prixacdn.net/media/gallery_folder/anm-fav_qoxqP25etb_w9atwz27jbcg7tngui3nbrxonkizics7ahdk4abp4xmtzjemqdmsswgktnlo.ico'
                 display(result)
                 if(result['date_bs']!=nepali_date) and (result['date_ad'] != eng_date):
                     continue
                 display(f'sending:-{result}')
                 email_body += f"""
-                    <div style="background-color:#ededed; margin-top:14px; ">
+                        <div style="background-color:#edece8; margin-top:14px; ">
+                        <div style="margin-left:7px;">
+                        <a style="text-decoration: none;" href='{result['link']}'><span style=" font-size:18px;color:BF3131; font-weight: bold;">{result['title']}</span></a>
+                        <br>
+                        <span style="padding: 5px; display: inline-block; position: fixed; top: 34px; left: 10px;">
+                        <img height="15px" src={icon}>
+                        </span>
+                        <span style="margin-left: 20px; text-decoration: underline;font-weight:bold; font-size:14px;color:#4a4a4a">
+                        {result['newspaper']}</span>
+                        <span style="font-weight:bold; font-size:13px;font-style:italic; color:7D0A0A;"> #{result['keyword']}</span>
 
-                    <div style="margin-left:7px;">
-                    <a style="text-decoration: none;" href='{result['link']}'><span style=" font-size:18px;color:black; font-weight: bold;">{result['title']}</span></a>
-                    <span style="font-weight:bold; font-size:13px;font-style:italic; color:#280a4f;"> #{result['keyword']}</span><br>
-                    <span style="color:black;text-decoration: underline;font-weight:bold; font-size:14px;color:#4a4a4a">{result['newspaper']}</span>
+                        <div style="padding-bottom:8px;">
+                        <p style=" color:black; font-size:14px">{result['content']}
+                        <a style="text-decoration: none;" href='{result['link']}'>Read More...</a><br><br>
 
-                    <span style="font-style:italic;font-weight:bold;font-size:14px; color:#4a4a4a">({result['date_ad']})</span>
-                    <div style="padding-bottom:8px;">
-                    <p style=" color:black; font-size:14px">{result['content']}
-                    <a style="text-decoration: none;" href='{result['link']}'>Read More...</a><br><br>
-                    
-                    </p>        
-                    </div>
-                    </div>
-                    </div>
-
-
+                        </p>        
+                        </div>
+                        </div>
+                        </div>
                 """
 
 
 
+                    # <div style="background-color:#ededed; margin-top:14px; ">
+
+                    # <div style="margin-left:7px;">
+                    # <a style="text-decoration: none;" href='{result['link']}'><span style=" font-size:18px;color:black; font-weight: bold;">{result['title']}</span></a>
+                    # <span style="font-weight:bold; font-size:13px;font-style:italic; color:#280a4f;"> #{result['keyword']}</span><br>
+                    # <span style="color:black;text-decoration: underline;font-weight:bold; font-size:14px;color:#4a4a4a">{result['newspaper']}</span>
+
+                    # <span style="font-style:italic;font-weight:bold;font-size:14px; color:#4a4a4a">({result['date_ad']})</span>
+                    # <div style="padding-bottom:8px;">
+                    # <p style=" color:black; font-size:14px">{result['content']}
+                    # <a style="text-decoration: none;" href='{result['link']}'>Read More...</a><br><br>
+                    
+                    # </p>        
+                    # </div>
+                    # </div>
+                    # </div>
         html_content = f"""
                         <html>
                         <body>

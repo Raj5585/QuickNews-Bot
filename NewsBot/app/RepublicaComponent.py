@@ -51,28 +51,23 @@ class RepublicaComponent(QRComponent):
                 self.browser.input_text(inputbar, keyword_to_search)
                 # display(f"***************Searching for {keyword_to_search} *****************")
                 self.browser.click_element(searchbutton)
-                time.sleep(5)
+                time.sleep(2)
                 try:
                     aarticle = self.browser.get_webelements(
                         '//section[@id="main-hightlight-categories-news"]'
                     )
                     time.sleep(5)
                     self.browser.click_element(filter_date)
-                    time.sleep(20)
+                    time.sleep(10)
                     articles = self.browser.get_webelements(
                         '//div[@class="panel panel-default ajaxResults "]/ul/li[@class="listedResult"]'
                     )
                     for article in articles:
                         link_element = article.find_element(By.XPATH, ".//h4/a")
-                        desc = self.browser.get_text(
-                            article.find_element(
-                                By.XPATH, './/p[@class="text-default"]'
-                            )
-                        )
+                        desc = self.browser.get_text(article.find_element(By.XPATH, './/p[@class="text-default"]')   )
+                        display(desc)
                         link = self.browser.get_element_attribute(link_element, "href")
-                        title = self.browser.get_text(
-                            article.find_element(By.XPATH, ".//h4/a/u")
-                        )
+                        title = self.browser.get_text(article.find_element(By.XPATH, ".//h4/a/u"))
                         date = self.browser.get_text(
                             article.find_element(
                                 By.XPATH, './/span[@class="smallTag text-muted"]'
@@ -82,9 +77,9 @@ class RepublicaComponent(QRComponent):
                         published_date=get_date[1]
                         date_object = datetime.strptime(published_date[:-16], "%B %d, %Y")
                         formatted_date = date_object.strftime('%Y-%m-%d')
-                        
+
                         self.news.append({'keyword':keyword_to_search,'title': title, 'content':desc,'link': link,'date_bs':'','date_ad':formatted_date,'newspaper':'My Republica'})
-                    
+                        
                 except:
                     display("No Articles")
             return self.news

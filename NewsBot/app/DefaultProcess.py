@@ -61,48 +61,60 @@ class DefaultProcess(QRProcess):
         **kwargs,
     ):
         # ktmpost_dat = self.ktmpost_component.scrape()
+        try:       
+            Ratopati_data = self.ratopati_component.scrape()
+            display(Ratopati_data)
+            self.postgres_component.sendtodb(newslst=Ratopati_data)
+        except Exception as e:
+            print(f"error occured due to {e}")
+        try:
+            ekantipur_data = self.ekantipur_component.scrape()
+            display(ekantipur_data)
+            self.postgres_component.sendtodb(newslst=ekantipur_data)
+        except Exception as e:
+            print(f"error occured due to {e}")
+        try:        
+            Himalayan_data = self.Himalayan_component.scrape()
+            display(Himalayan_data)
+            self.postgres_component.sendtodb(newslst=Himalayan_data)
+        except Exception as e:
+            print(f"error occured due to {e}")
+        try:       
+            Nagarik_data = self.nagarik_component.scrape()
+            display(Nagarik_data)
+            self.postgres_component.sendtodb(newslst=Nagarik_data)
+        except Exception as e:
+            print(f"error occured due to {e}")
+        try:       
+            Republica_data = self.Republica_Component.scrape()
+            display(Republica_data)
+            self.postgres_component.sendtodb(newslst=Republica_data)
+        except Exception as e:
+            print(f"error occured due to {e}")
+        try:       
+            Annapurna_data = self.Annapurna_component.scrape()
+            display(Annapurna_data)
+            self.postgres_component.sendtodb(newslst=Annapurna_data)
+        except Exception as e:
+            print(f"error occured due to {e}")
+        #
+        result = self.postgres_component.fetchData()
 
-        Ratopati_data = self.ratopati_component.scrape()
-        display(Ratopati_data)
-        self.postgres_component.sendtodb(newslst=Ratopati_data)
-
-        # ekantipur_data = self.ekantipur_component.scrape()
-        # display(ekantipur_data)
-        # self.postgres_component.sendtodb(newslst=ekantipur_data)
-        
-        # Himalayan_data = self.Himalayan_component.scrape()
-        # display(Himalayan_data)
-        # self.postgres_component.sendtodb(newslst=Himalayan_data)
-        
-        # Nagarik_data = self.nagarik_component.scrape()
-        # display(Nagarik_data)
-        # self.postgres_component.sendtodb(newslst=Nagarik_data)
-        
-        # Republica_data = self.Republica_Component.scrape()
-        # display(Republica_data)
-        # self.postgres_component.sendtodb(newslst=Republica_data)
-        
-        # Annapurna_data = self.Annapurna_component.scrape()
-        # display(Annapurna_data)
-        # self.postgres_component.sendtodb(newslst=Annapurna_data)
-        # #
-        # result = self.postgres_component.fetchData()
-
-#         display(
-#             "------------------------------------------------------------[ RESULT ]---------------------------------------------------------"
-#         )
-#         total_news = 0
-#         for each in result:
-#             display(json.dumps(each, indent=4, ensure_ascii=False))
-#             total_news = total_news + 1
-#         display(
-#             f"""
-# -------------------------------------------------------------------------------------------------------------------------------
-#                             TOTAL NEWS : {total_news}
-# -------------------------------------------------------------------------------------------------------------------------------
-#             """
-#         )
-        # self.mailcomponent.send(lst=result)
+        display(
+            "------------------------------------------------------------[ RESULT ]---------------------------------------------------------"
+        )
+        total_news = 0
+        for each in result:
+            display(json.dumps(each, indent=4, ensure_ascii=False))
+            total_news = total_news + 1
+        display(
+            f"""
+-------------------------------------------------------------------------------------------------------------------------------
+                            TOTAL NEWS : {total_news}
+-------------------------------------------------------------------------------------------------------------------------------
+            """
+        )
+        self.mailcomponent.send(lst=result)
 
     @run_item(is_ticket=False, post_success=False)
     def after_run_item(self, *args, **kwargs):
