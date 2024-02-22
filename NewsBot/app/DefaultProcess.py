@@ -61,12 +61,12 @@ class DefaultProcess(QRProcess):
         **kwargs,
     ):
 
-        try:       
-            Ratopati_data = self.ratopati_component.scrape()
-            display(Ratopati_data)
-            self.postgres_component.sendtodb(newslst=Ratopati_data)
-        except Exception as e:
-            print(f"error occured due to {e}")
+        # try:
+        #     Ratopati_data = self.ratopati_component.scrape()
+        #     display(Ratopati_data)
+        #     self.postgres_component.sendtodb(newslst=Ratopati_data)
+        # except Exception as e:
+        #     print(f"error occured due to {e}")
 
         try:
             ekantipur_data = self.ekantipur_component.scrape()
@@ -75,34 +75,33 @@ class DefaultProcess(QRProcess):
         except Exception as e:
             print(f"error occured due to {e}")
 
-        try:        
+        try:
             Himalayan_data = self.Himalayan_component.scrape()
             display(Himalayan_data)
             self.postgres_component.sendtodb(newslst=Himalayan_data)
         except Exception as e:
             print(f"error occured due to {e}")
 
-        try:       
-            Nagarik_data = self.nagarik_component.scrape()
-            display(Nagarik_data)
-            self.postgres_component.sendtodb(newslst=Nagarik_data)
-        except Exception as e:
-            print(f"error occured due to {e}")
+        # try:
+        #     Nagarik_data = self.nagarik_component.scrape()
+        #     display(Nagarik_data)
+        #     self.postgres_component.sendtodb(newslst=Nagarik_data)
+        # except Exception as e:
+        #     print(f"error occured due to {e}")
 
-        try:       
+        try:
             Republica_data = self.Republica_Component.scrape()
             display(Republica_data)
             self.postgres_component.sendtodb(newslst=Republica_data)
         except Exception as e:
             print(f"error occured due to {e}")
-            
-        try:       
-            Annapurna_data = self.Annapurna_component.scrape()
-            display(Annapurna_data)
-            self.postgres_component.sendtodb(newslst=Annapurna_data)
-        except Exception as e:
-            print(f"error occured due to {e}")
 
+        # try:
+        #     Annapurna_data = self.Annapurna_component.scrape()
+        #     display(Annapurna_data)
+        #     self.postgres_component.sendtodb(newslst=Annapurna_data)
+        # except Exception as e:
+        #     print(f"error occured due to {e}")
 
         #
         result = self.postgres_component.fetchData()
@@ -121,7 +120,7 @@ class DefaultProcess(QRProcess):
 -------------------------------------------------------------------------------------------------------------------------------
             """
         )
-        self.mailcomponent.send(lst=result)
+        # self.mailcomponent.send(lst=result)
 
     @run_item(is_ticket=False, post_success=False)
     def after_run_item(self, *args, **kwargs):

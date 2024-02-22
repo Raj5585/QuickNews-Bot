@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "/tmp/QuickNews-Bot/NewsBot/keywords",
+        "/tmp/QuickNews-Bot/NewsBot/libraries",
+        "/tmp/QuickNews-Bot/NewsBot/variables",
+        "/tmp/QuickNews-Bot/NewsBot/qrlib",
+        "/tmp/QuickNews-Bot/NewsBot/app"
+    ]
+}

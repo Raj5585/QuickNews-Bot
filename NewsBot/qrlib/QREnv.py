@@ -7,11 +7,11 @@ class QREnv:
     BOT_NAME = 'My Bot'             # Name of the bot. Will be used in email notifications
     
     PLATFORM_VERSION = 2            # v1 currently in NCell, Prime, Civil, NMB. Rest are on v2     
-    NO_PLATFORM = False
+    NO_PLATFORM = True
     
     # IDENTIFIER = BuiltIn().get_variable_value("${identifier}")            # For platform v1
-    IDENTIFIER = os.environ.get("identifier")                             # For platform v2
-    # IDENTIFIER =  "f2a2e5ee-5fcf-47ac-9ab0-9870647a225f"                     # For testing on server via localhost
+    # IDENTIFIER = os.environ.get("identifier")                             # For platform v2
+    IDENTIFIER =  "f2a2e5ee-5fcf-47ac-9ab0-9870647a225f"                     # For testing on server via localhost
     
     VERIFY_SSL = False
     DEBUG = True

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.11.7 on linux)" generated="20240222 13:36:50.459" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="/tmp/QuickNews-Bot/NewsBot/tasks.robot">
+<test id="s1-t1" name="RPA Task" line="7">
+<kw name="Start" library="Bot">
+<msg timestamp="20240222 13:36:52.497" level="INFO">Resolving path: devdata/vault.json</msg>
+<msg timestamp="20240222 13:36:52.498" level="INFO">Retrieved vault: test</msg>
+<msg timestamp="20240222 13:36:52.498" level="INFO">Resolving path: devdata/vault.json</msg>
+<msg timestamp="20240222 13:36:52.498" level="INFO">Retrieved vault: Quickfox</msg>
+<msg timestamp="20240222 13:37:05.666" level="INFO">Run Item: {'started_at': '2024-02-22 13:36:52', 'completed_at': '2024-02-22 13:37:05', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
+<msg timestamp="20240222 13:37:05.666" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240222 13:37:07.410" level="WARN">The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20240222 13:37:07.765" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20240222 13:37:08.766" level="INFO">Downloaded webdriver to: /home/saurab/.robocorp/webdrivers/.wdm/drivers/chromedriver/linux64/121.0.6167.184/chromedriver-linux64/chromedriver</msg>
+<msg timestamp="20240222 13:37:08.767" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240222 13:37:09.069" level="INFO">Created Chrome browser with arguments: --headless=new --disable-gpu --window-size=1440,900 --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20240222 13:37:09.069" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: session not created: This version of ChromeDriver only supports Chrome version 122
+Current browser version is 121.0.6167.184 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x621691a5a1b4 &lt;unknown&gt;
+#1 0x62169174499d &lt;unknown&gt;
+#2 0x621691781085 &lt;unknown&gt;
+#3 0x62169177fef1 &lt;unknown&gt;
+#4 0x62169177b3bf &lt;unknown&gt;
+#5 0x621691776573 &lt;unknown&gt;
+#6 0x6216917c27ba &lt;unknown&gt;
+#7 0x6216917c1e83 &lt;unknown&gt;
+#8 0x6216917b57c3 &lt;unknown&gt;
+#9 0x621691783f48 &lt;unknown&gt;
+#10 0x621691784d6f &lt;unknown&gt;
+#11 0x621691a27b92 &lt;unknown&gt;
+#12 0x621691a2b10a &lt;unknown&gt;
+#13 0x621691a2abb1 &lt;unknown&gt;
+#14 0x621691a2b5f5 &lt;unknown&gt;
+#15 0x621691a1887b &lt;unknown&gt;
+#16 0x621691a2b9f6 &lt;unknown&gt;
+#17 0x621691a03e70 &lt;unknown&gt;
+#18 0x621691a49547 &lt;unknown&gt;
+#19 0x621691a49733 &lt;unknown&gt;
+#20 0x621691a594be &lt;unknown&gt;
+#21 0x7abe6cd9855a &lt;unknown&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20240222 13:37:09.069" level="INFO">Opening url 'https://ekantipur.com/search/2003/?txtSearch=&amp;year=2024&amp;date-from=2024-02-22&amp;date-to=2024-02-22'</msg>
+<msg timestamp="20240222 13:37:12.307" level="INFO">Typing text 'भ्रष्टाचार' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:12.394" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:12.857" level="INFO">Typing text 'बैंकिङ कसुर' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:12.928" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:13.370" level="INFO">Typing text 'मनी लान्ड्रिङ' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:13.447" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:13.986" level="INFO">Typing text 'सम्पत्ति शुद्धीकरण' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:14.057" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:14.650" level="INFO">Typing text 'घुस' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:14.716" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:15.085" level="INFO">Typing text 'आतंकवादी' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:15.153" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:15.536" level="INFO">Typing text 'कर छलि ' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:15.602" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:16.116" level="INFO">Typing text 'मानव बेचबिखन' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:16.190" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:16.489" level="INFO">Typing text 'जालसाजी' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:16.562" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:16.909" level="INFO">Typing text 'जालसाज' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:16.981" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:17.368" level="INFO">Typing text 'लागुऔषध ओसारपसार' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:17.442" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:18.725" level="INFO">Typing text 'नक्कली मुद्रा' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:18.801" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:20.118" level="INFO">Typing text 'कुमारी बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:20.189" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:20.504" level="INFO">Typing text 'राष्ट्रिय वाणिज्य बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:20.582" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:22.130" level="INFO">Typing text 'कृषि विकास बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:22.203" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:22.529" level="INFO">Typing text 'नबिल बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:22.605" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:22.932" level="INFO">Typing text 'नेपाल इन्भेष्टमेन्ट मेगा बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:23.015" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:23.428" level="INFO">Typing text 'स्ट्याण्डर्ड चार्टर्ड बैंक नेपाल' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:23.514" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:23.861" level="INFO">Typing text 'हिमालयन बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:23.939" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:24.475" level="INFO">Typing text 'नेपाल एसबिआई बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:24.557" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:24.979" level="INFO">Typing text 'एभरेष्ट बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:25.054" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:25.501" level="INFO">Typing text 'प्रभु बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:25.577" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:25.881" level="INFO">Typing text 'लक्ष्मी सनराइज बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:25.956" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:27.389" level="INFO">Typing text 'ग्लोबल आइएमई लिमिटेड' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:27.464" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:28.642" level="INFO">Typing text 'सिटिजन्स बैंक इन्टरनेसनल' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:28.718" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:29.031" level="INFO">Typing text 'प्राइम कमर्सियल बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:29.115" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:29.441" level="INFO">Typing text 'एनएमबि बैंक नेपाल' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:29.517" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:30.376" level="INFO">Typing text 'एनआईसी एशिया बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:30.450" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:31.594" level="INFO">Typing text 'सिद्धार्थ बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:31.669" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:32.894" level="INFO">Typing text 'सानिमा बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:32.968" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:33.284" level="INFO">Typing text 'माछापुच्छ्रे बैंक' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:33.363" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:33.699" level="INFO">Typing text 'नेपाल बैंक लिमिटेड' into text field 'xpath=//input[@id='txtSearch']'.</msg>
+<msg timestamp="20240222 13:37:33.780" level="INFO">Clicking button 'xpath=//input[@class='commentBtnText default-btn']'.</msg>
+<msg timestamp="20240222 13:37:36.444" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240222 13:37:36.530" level="WARN">The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20240222 13:37:36.885" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20240222 13:37:36.993" level="INFO">Downloaded webdriver to: /home/saurab/.robocorp/webdrivers/.wdm/drivers/chromedriver/linux64/121.0.6167.184/chromedriver-linux64/chromedriver</msg>
+<msg timestamp="20240222 13:37:36.993" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240222 13:37:37.344" level="INFO">Created Chrome browser with arguments: --headless=new --disable-gpu --window-size=1440,900 --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20240222 13:37:37.344" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: session not created: This version of ChromeDriver only supports Chrome version 122
+Current browser version is 121.0.6167.184 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x619e0c32c1b4 &lt;unknown&gt;
+#1 0x619e0c01699d &lt;unknown&gt;
+#2 0x619e0c053085 &lt;unknown&gt;
+#3 0x619e0c051ef1 &lt;unknown&gt;
+#4 0x619e0c04d3bf &lt;unknown&gt;
+#5 0x619e0c048573 &lt;unknown&gt;
+#6 0x619e0c0947ba &lt;unknown&gt;
+#7 0x619e0c093e83 &lt;unknown&gt;
+#8 0x619e0c0877c3 &lt;unknown&gt;
+#9 0x619e0c055f48 &lt;unknown&gt;
+#10 0x619e0c056d6f &lt;unknown&gt;
+#11 0x619e0c2f9b92 &lt;unknown&gt;
+#12 0x619e0c2fd10a &lt;unknown&gt;
+#13 0x619e0c2fcbb1 &lt;unknown&gt;
+#14 0x619e0c2fd5f5 &lt;unknown&gt;
+#15 0x619e0c2ea87b &lt;unknown&gt;
+#16 0x619e0c2fd9f6 &lt;unknown&gt;
+#17 0x619e0c2d5e70 &lt;unknown&gt;
+#18 0x619e0c31b547 &lt;unknown&gt;
+#19 0x619e0c31b733 &lt;unknown&gt;
+#20 0x619e0c32b4be &lt;unknown&gt;
+#21 0x75a768aa955a &lt;unknown&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20240222 13:37:37.344" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:37:39.321" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:37:39.919" level="INFO">Typing text 'Money laundering' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:37:40.017" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:37:47.088" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:37:48.727" level="INFO">Typing text 'Terrorist financing' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:37:48.798" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:00.494" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:02.839" level="INFO">Typing text 'Fraud / forgery' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:02.903" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:10.081" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:10.754" level="INFO">Typing text 'Corruption' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:10.813" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:18.026" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:18.920" level="INFO">Typing text 'Bribe' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:18.975" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:24.879" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:25.766" level="INFO">Typing text 'Banking offence' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:25.830" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:33.022" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:33.576" level="INFO">Typing text 'Tax evasion' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:33.637" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:41.228" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:41.907" level="INFO">Typing text 'Drug trafficking' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:41.968" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:49.840" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:50.374" level="INFO">Typing text 'Human trafficking' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:50.448" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:41:58.116" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:41:58.461" level="INFO">Typing text 'Counterfeit currency' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:41:58.529" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:06.457" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:06.880" level="INFO">Typing text 'Blackmarket' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:06.942" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:14.347" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:15.037" level="INFO">Typing text 'Gambling' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:15.095" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:22.560" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:23.231" level="INFO">Typing text 'Kumari Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:23.303" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:30.241" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:30.711" level="INFO">Typing text 'Rastriya Banijya Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:30.781" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:37.623" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:37.976" level="INFO">Typing text 'Agriculture Development Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:38.054" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:45.415" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:46.165" level="INFO">Typing text 'Nabil Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:46.225" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:42:53.383" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:42:53.955" level="INFO">Typing text 'Nepal Investment Mega Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:42:54.041" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:01.162" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:02.344" level="INFO">Typing text 'Standard Chartered Bank Nepal' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:02.438" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:09.506" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:09.947" level="INFO">Typing text 'Himalayan Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:10.024" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:17.082" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:17.807" level="INFO">Typing text 'Nepal SBI Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:17.873" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:24.698" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:25.273" level="INFO">Typing text 'Everest Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:25.333" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:32.198" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:32.760" level="INFO">Typing text 'Prabhu Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:32.826" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:40.044" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:40.849" level="INFO">Typing text 'Laxmi Sunrise Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:40.923" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:47.907" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:48.345" level="INFO">Typing text 'Global IME Limited' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:48.415" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:43:54.569" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:43:55.426" level="INFO">Typing text 'Citizens Bank International' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:43:55.504" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:44:03.556" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:44:04.297" level="INFO">Typing text 'Prime Commercial Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:44:04.367" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:46:24.755" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:46:26.178" level="INFO">Typing text 'NMB Bank Nepal' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:46:26.240" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:46:33.066" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:46:33.532" level="INFO">Typing text 'NIC Asia Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:46:33.588" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:46:40.740" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:46:41.322" level="INFO">Typing text 'Siddhartha Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:46:41.386" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:46:50.075" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:46:50.490" level="INFO">Typing text 'Sanima Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:46:50.549" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:46:57.595" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:46:58.412" level="INFO">Typing text 'Machhapuchchhre Bank' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:46:58.475" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:47:05.897" level="INFO">Opening url 'https://thehimalayantimes.com/search?query='</msg>
+<msg timestamp="20240222 13:47:06.372" level="INFO">Typing text 'Nepal Bank Limited' into text field '//input[@class="gnt_se_frm_q"]'.</msg>
+<msg timestamp="20240222 13:47:06.440" level="INFO">Clicking element '//button[@class="gnt_se_frm_sm"]'.</msg>
+<msg timestamp="20240222 13:47:15.970" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240222 13:47:16.043" level="WARN">The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20240222 13:47:16.388" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20240222 13:47:16.490" level="INFO">Downloaded webdriver to: /home/saurab/.robocorp/webdrivers/.wdm/drivers/chromedriver/linux64/121.0.6167.184/chromedriver-linux64/chromedriver</msg>
+<msg timestamp="20240222 13:47:16.491" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240222 13:47:16.954" level="INFO">Created Chrome browser with arguments: --headless=new --disable-gpu --window-size=1440,900 --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20240222 13:47:16.954" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: session not created: This version of ChromeDriver only supports Chrome version 122
+Current browser version is 121.0.6167.184 with binary path /usr/bin/google-chrome
+Stacktrace:
+#0 0x651e1470a1b4 &lt;unknown&gt;
+#1 0x651e143f499d &lt;unknown&gt;
+#2 0x651e14431085 &lt;unknown&gt;
+#3 0x651e1442fef1 &lt;unknown&gt;
+#4 0x651e1442b3bf &lt;unknown&gt;
+#5 0x651e14426573 &lt;unknown&gt;
+#6 0x651e144727ba &lt;unknown&gt;
+#7 0x651e14471e83 &lt;unknown&gt;
+#8 0x651e144657c3 &lt;unknown&gt;
+#9 0x651e14433f48 &lt;unknown&gt;
+#10 0x651e14434d6f &lt;unknown&gt;
+#11 0x651e146d7b92 &lt;unknown&gt;
+#12 0x651e146db10a &lt;unknown&gt;
+#13 0x651e146dabb1 &lt;unknown&gt;
+#14 0x651e146db5f5 &lt;unknown&gt;
+#15 0x651e146c887b &lt;unknown&gt;
+#16 0x651e146db9f6 &lt;unknown&gt;
+#17 0x651e146b3e70 &lt;unknown&gt;
+#18 0x651e146f9547 &lt;unknown&gt;
+#19 0x651e146f9733 &lt;unknown&gt;
+#20 0x651e147094be &lt;unknown&gt;
+#21 0x7572845bd55a &lt;unknown&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20240222 13:47:16.954" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:47:18.961" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:47:19.831" level="INFO">Typing text 'Money laundering' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:47:19.914" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:47:26.962" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:47:37.450" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:47:38.394" level="INFO">Typing text 'Terrorist financing' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:47:38.454" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:47:45.492" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:47:55.931" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:47:57.164" level="INFO">Typing text 'Fraud / forgery' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:47:57.222" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:48:04.260" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:48:14.305" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:48:15.223" level="INFO">Typing text 'Corruption' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:48:15.277" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:48:22.317" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:48:32.750" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:48:33.735" level="INFO">Typing text 'Bribe' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:48:33.791" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:48:40.831" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:48:50.877" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:48:52.175" level="INFO">Typing text 'Banking offence' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:48:52.235" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:48:59.274" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:49:09.322" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:49:10.267" level="INFO">Typing text 'Tax evasion' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:49:10.327" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:49:17.368" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:49:27.792" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:49:28.798" level="INFO">Typing text 'Drug trafficking' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:49:28.860" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:49:35.901" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:49:46.329" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:49:47.433" level="INFO">Typing text 'Human trafficking' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:49:47.492" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:49:54.533" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:50:04.954" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:50:06.413" level="INFO">Typing text 'Counterfeit currency' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:50:06.477" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:50:13.516" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:50:23.896" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:50:25.568" level="INFO">Typing text 'Blackmarket' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:50:25.625" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:50:32.666" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:50:42.710" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:50:43.756" level="INFO">Typing text 'Gambling' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:50:43.812" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:50:50.854" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:51:01.287" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:51:02.362" level="INFO">Typing text 'Kumari Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:51:02.424" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:51:09.464" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:51:19.509" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:51:20.557" level="INFO">Typing text 'Rastriya Banijya Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:51:20.625" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:51:27.665" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:51:38.108" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:51:39.020" level="INFO">Typing text 'Agriculture Development Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:51:39.085" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:51:46.128" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:51:56.570" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:51:57.476" level="INFO">Typing text 'Nabil Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:51:57.536" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:52:04.577" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:52:15.022" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:52:16.013" level="INFO">Typing text 'Nepal Investment Mega Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:52:16.086" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:52:23.127" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:52:33.567" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:52:34.690" level="INFO">Typing text 'Standard Chartered Bank Nepal' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:52:34.760" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:52:41.801" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:52:52.238" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:52:53.105" level="INFO">Typing text 'Himalayan Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:52:53.165" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:53:00.207" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:53:10.636" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:53:11.538" level="INFO">Typing text 'Nepal SBI Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:53:11.596" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:53:18.638" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:53:29.089" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:53:30.037" level="INFO">Typing text 'Everest Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:53:30.097" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:53:37.139" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:53:47.583" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:53:48.869" level="INFO">Typing text 'Prabhu Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:53:48.925" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:53:55.966" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:54:06.416" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:54:07.756" level="INFO">Typing text 'Laxmi Sunrise Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:54:07.812" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:54:14.852" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:54:25.305" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:54:26.201" level="INFO">Typing text 'Global IME Limited' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:54:26.263" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:54:33.305" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:54:43.355" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:54:44.228" level="INFO">Typing text 'Citizens Bank International' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:54:44.295" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:54:51.334" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:55:01.768" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:55:02.996" level="INFO">Typing text 'Prime Commercial Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:55:03.068" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:55:10.110" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:55:20.559" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:55:21.673" level="INFO">Typing text 'NMB Bank Nepal' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:55:21.729" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:55:28.770" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:55:38.815" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:55:40.042" level="INFO">Typing text 'NIC Asia Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:55:40.105" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:55:47.151" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:55:57.586" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:55:58.636" level="INFO">Typing text 'Siddhartha Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:55:58.698" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:56:05.737" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:56:16.182" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:56:17.206" level="INFO">Typing text 'Sanima Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:56:17.261" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:56:24.300" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:56:34.730" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:56:35.637" level="INFO">Typing text 'Machhapuchchhre Bank' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:56:35.697" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:56:42.735" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 13:56:53.176" level="INFO">Opening url 'https://myrepublica.nagariknetwork.com/query'</msg>
+<msg timestamp="20240222 13:56:54.133" level="INFO">Typing text 'Nepal Bank Limited' into text field '//input[@name="search"]'.</msg>
+<msg timestamp="20240222 13:56:54.196" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<msg timestamp="20240222 13:57:01.238" level="INFO">Clicking element '//a[@id="filter24hr"]'.</msg>
+<msg timestamp="20240222 14:01:13.193" level="ERROR">Traceback (most recent call last):
+  File "/tmp/QuickNews-Bot/NewsBot/qrlib/QRDecorators.py", line 16, in wrapper
+    value = function(self, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/QuickNews-Bot/NewsBot/app/DefaultProcess.py", line 113, in execute_run_item
+    for each in result:
+                ^^^^^^
+NameError: name 'result' is not defined
+</msg>
+<msg timestamp="20240222 14:01:13.193" level="INFO">Run Item: {'started_at': '2024-02-22 13:37:05', 'completed_at': '2024-02-22 14:01:13', 'status': 'Error', 'report_data': {}, 'is_ticket': True, 'notification': {}}</msg>
+<msg timestamp="20240222 14:01:13.194" level="FAIL">NameError: name 'result' is not defined</msg>
+<status status="FAIL" starttime="20240222 13:36:52.325" endtime="20240222 14:01:13.194"/>
+</kw>
+<kw name="Teardown" library="Bot" type="TEARDOWN">
+<status status="PASS" starttime="20240222 14:01:13.195" endtime="20240222 14:01:13.195"/>
+</kw>
+<status status="FAIL" starttime="20240222 13:36:52.325" endtime="20240222 14:01:13.195">NameError: name 'result' is not defined</status>
+</test>
+<doc>Template robot main suite.</doc>
+<status status="FAIL" starttime="20240222 13:36:50.460" endtime="20240222 14:01:13.196"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240222 13:37:07.410" level="WARN">The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20240222 13:37:36.530" level="WARN">The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20240222 13:47:16.043" level="WARN">The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20240222 14:01:13.193" level="ERROR">Traceback (most recent call last):
+  File "/tmp/QuickNews-Bot/NewsBot/qrlib/QRDecorators.py", line 16, in wrapper
+    value = function(self, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/QuickNews-Bot/NewsBot/app/DefaultProcess.py", line 113, in execute_run_item
+    for each in result:
+                ^^^^^^
+NameError: name 'result' is not defined
+</msg>
+</errors>
+</robot>

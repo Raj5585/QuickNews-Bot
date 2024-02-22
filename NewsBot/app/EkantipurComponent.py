@@ -88,19 +88,20 @@ class Ekantipur(QRComponent):
                     date = nepali_datetime.date(conv_year, conv_month, conv_day)
                     date_bs = date.strftime("%Y-%m-%d")
                     date_ad = date.to_datetime_date().strftime("%Y-%m-%d")
-                    if link not in self.alllinks:
-                        self.alllinks.append(link)
-                        results.append(
-                            {
-                                "newspaper": "eKantipur",
-                                "keyword": keyword,
-                                "title": title,
-                                "content": content,
-                                "link": link,
-                                "date_ad": date_ad,
-                                "date_bs": date_bs,
-                            }
-                        )
+                    if keyword in title or keyword in content:
+                        if link not in self.alllinks:
+                            self.alllinks.append(link)
+                            results.append(
+                                {
+                                    "newspaper": "eKantipur",
+                                    "keyword": keyword,
+                                    "title": title,
+                                    "content": content,
+                                    "link": link,
+                                    "date_ad": date_ad,
+                                    "date_bs": date_bs,
+                                }
+                            )
             except Exception as e:
                 display("\t\t article not found")
         display(

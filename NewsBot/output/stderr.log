@@ -1,0 +1,13 @@
+2024-02-22 13:36:50,822 - RPA.core.certificates - INFO - Truststore not in use, HTTPS traffic validated against `certifi` package. (requires Python 3.10.12 and 'pip' 23.2.1 at minimum)
+[ WARN ] The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry
+[ WARN ] The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry
+[ WARN ] The chromedriver version (122.0.6261.39) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (121.0.6167.184); currently, chromedriver 121.0.6167.184 is recommended for chrome 121.*, so it is advised to delete the driver in PATH and retry
+[ ERROR ] Traceback (most recent call last):
+  File "/tmp/QuickNews-Bot/NewsBot/qrlib/QRDecorators.py", line 16, in wrapper
+    value = function(self, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/QuickNews-Bot/NewsBot/app/DefaultProcess.py", line 113, in execute_run_item
+    for each in result:
+                ^^^^^^
+NameError: name 'result' is not defined
+
